@@ -1,0 +1,42 @@
+int missingNumber(vector<int>&a, int N) {
+    int sum=N*(N+1)/2;
+    int s2=0;
+    for(int i=0;i<a.size();i++)
+    {
+        s2+=a[i];
+    }
+    return sum-s2;
+    
+}
+// optimal
+
+
+// bettter
+// int missingNumber(vector<int>&a, int N) {
+//   int hash[N + 1] = {0};
+//   for (int i = 0; i < N; i++) {
+//     hash[a[i]]++;
+//     }
+//     for(int i=1;i<=N;i++)
+//     {
+//       if (hash[i] == 0) {
+//         return i;
+//       }
+//     }
+    
+// }
+// brute force approach
+// int missingNumber(vector<int>&a, int N) {
+//     for (int i = 1; i <= N; i++) {
+//         int flag = 0;
+
+//         for (int j = 0; j < N - 1; j++) {
+//             if (a[j] == i) {
+//                 flag = 1;
+//                 break;
+//             }
+//         }
+//         if (flag == 0) return i;
+//     }
+//     return -1;
+// }
